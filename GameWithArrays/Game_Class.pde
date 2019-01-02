@@ -5,11 +5,13 @@ class Game {
   boolean lost=false;
 
   //Game initializer 
-  public Game(int n_Ball) {
+   Game(int n_Ball) {
     BallRow = new Ball[n_Ball]; 
     for (int i=0; i<n_Ball; i++) {
-      int ballWidth = int(random(10, 60));
-      BallRow[i] = new Ball(int(random(ballWidth, 600)), int(random(ballWidth, 400)), ballWidth, ballWidth);
+      
+      
+      int ballRadius = int(random(10, 60));
+      BallRow[i] = new Ball(int(random(ballRadius, 600)), int(random(ballRadius, 400)), ballRadius, ballRadius);
     }
   }
 

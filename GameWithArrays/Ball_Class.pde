@@ -9,8 +9,8 @@ class Ball {
   int lives=5;
   int score=0;
 
-  public int ellipseXdir=2;
-  public int ellipseYdir=1;
+   int ellipseXdir=2;
+   int ellipseYdir=1;
 
   //All my declarions
 
@@ -55,7 +55,7 @@ class Ball {
       ellipseYdir=-ellipseYdir;
     }
   }
-
+//This function has 3 parameters 
   boolean amICollidingWithOtherBall(int otherEllipseX, int otherEllipseY, int otherEllipseH) {
     if (dist(ellipseX, ellipseY, otherEllipseX, otherEllipseY) < ellipseH/2 + otherEllipseH/2) {
       return true;

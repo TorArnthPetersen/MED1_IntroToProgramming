@@ -13,16 +13,14 @@ void setup() {
 }
 
 void draw() {
-  background(255);
-  
+  background(random(255),random(255),random(255));
   textSize(24);
-  
   fill(#FF0000);
   text(("Score="+gameInstance.score), 50, 20);
   //To keep track of score
   text("Lives="+gameInstance.lives, 50, 40);
   //To keep track of lives
-  
+
   for (int i = 0; i < gameInstance.BallRow.length; i++) {
     gameInstance.BallRow[i].evtChangeDirection();
     gameInstance.BallRow[i].display();
@@ -33,7 +31,7 @@ void draw() {
 
   for (int i = 0; i < gameInstance.BallRow.length; i++) {
     for (int j = 0; j < gameInstance.BallRow.length; j++) {
-      
+
       Ball thisBall = gameInstance.BallRow[i];
       Ball otherBall = gameInstance.BallRow[j];
       if (thisBall.amICollidingWithOtherBall(otherBall.ellipseX, otherBall.ellipseY, otherBall.ellipseH) && i!=j ) {
