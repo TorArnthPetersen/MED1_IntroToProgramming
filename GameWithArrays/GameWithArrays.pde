@@ -8,12 +8,14 @@ SoundFile song;
 void setup() {
   size(600, 400);
   //Initiliazing the soundfile
+    // Load a soundfile
   song = new SoundFile(this, "244004__mickleness__arcade-game-loop.mp3");
-  song.play();
+  // Play the file in a loop
+  song.loop();
 }
 
 void draw() {
-  background(random(255),random(255),random(255));
+  background(random(255), random(255), random(255));
   textSize(24);
   fill(#FF0000);
   text(("Score="+gameInstance.score), 50, 20);
@@ -21,6 +23,13 @@ void draw() {
   text("Lives="+gameInstance.lives, 50, 40);
   //To keep track of lives
 
+/*
+ Composite Objects
+ An object can include several other objects. Creating such composite objects 
+ is a good way to use the principles of modularity and build higher levels of 
+ abstraction within a program.
+ */
+ 
   for (int i = 0; i < gameInstance.BallRow.length; i++) {
     gameInstance.BallRow[i].evtChangeDirection();
     gameInstance.BallRow[i].display();

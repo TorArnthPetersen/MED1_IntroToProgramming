@@ -1,16 +1,33 @@
 class Game {
+  /*
+   An array is a list of data. Each piece of data in an array 
+   is identified by an index number representing its position in 
+   the array. Arrays are zero based, which means that the first 
+   element in the array is [0], the second element is [1], and so on. 
+   the syntax for creating an array of custom objects. 
+
+   */
   Ball [] BallRow; 
   int score=0;
   int lives=5;
   boolean lost=false;
 
   //Game initializer 
-   Game(int n_Ball) {
+  /**
+ * Multiple constructors
+ * 
+ * A class can have multiple constructors that assign the fields in different ways. 
+ * Sometimes it's beneficial to specify every aspect of an object's data by assigning 
+ * parameters to the fields, but other times it might be appropriate to define only 
+ * one or a few.
+ */
+
+  Game(int n_Ball) {
     BallRow = new Ball[n_Ball]; 
     for (int i=0; i<n_Ball; i++) {
-      
-      
-      int ballRadius = int(random(10, 60));
+
+
+      int ballRadius = int(random(50, 60));
       BallRow[i] = new Ball(int(random(ballRadius, 600)), int(random(ballRadius, 400)), ballRadius, ballRadius);
     }
   }
