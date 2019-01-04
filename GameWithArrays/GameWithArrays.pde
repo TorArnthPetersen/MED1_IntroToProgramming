@@ -68,16 +68,18 @@ void mousePressed() {
       p++;
     }
   }
-  //If the variable 'p' is greater and 0 or equal to 0, the variable score will set to 1
+  //If the variable 'p' is greater or equal to 0, the variable score will set to 1,
   if (p>0) {
     if (gameInstance.score ==0) {
       gameInstance.score=1;
     } else {
-      //If the 
+      //The old 'score' is added to itself, which means the higher the 'score' the more is added to the current 'score'
       gameInstance.score+= gameInstance.score;
     }
+    // The default is that variable 'lives' is minused by 1
   } else {
     gameInstance.lives--;
   }
+  //The life()-method in the gameClass is updated 
   gameInstance.life();
 }
