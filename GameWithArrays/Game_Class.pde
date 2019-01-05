@@ -4,34 +4,27 @@ class Game {
   Ball [] BallRow; 
   
   // 3 variables are declared
-  //They need to be in a global scope, as they're are used inside a function in the main program
     int score=0;
     int lives=5;
     boolean lost=false;
 
   //Game initializer 
-  /**
-   * Multiple constructors
-   * 
-   * A class can have multiple constructors that assign the fields in different ways. 
-   * Sometimes it's beneficial to specify every aspect of an object's data by assigning 
-   * parameters to the fields, but other times it might be appropriate to define only 
-   * one or a few.
-   */
-
   //The Game-class-constructor, has one int paramter (n_Ball), which determines how many balls are initialized in the game
   Game(int n_Ball) {
+    
     //The array BallRow is initialized. 
     // After the 'new'-operator the Array of objects BallRow is initialized, 
     // the amount of object is defined as the argument passed into the Game-constructor 
     BallRow = new Ball[n_Ball]; 
+    
     //n_ball is now the length of the BallRow array
     for (int i=0; i<n_Ball; i++) {
 
       //The variable ballRadius is declared 
       int ballRadius = int(random(50, 60));
+      
       //For every spot in the array BallRow an object Ball is created, from the Ball-class constructor
-      //Which takes 4 paramteres: x and why for the balls starting position and height and width 
+      //Which takes 4 paramteres: x and y for the balls starting position and height and width 
       // (which is the same in this case(ballRadius)) 
       BallRow[i] = new Ball(int(random(ballRadius, 600)), int(random(ballRadius, 400)), ballRadius, ballRadius);
     }
